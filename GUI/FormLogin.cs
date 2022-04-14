@@ -105,23 +105,25 @@ namespace GUI
                     var validacionUsuario = dominio.validarUsuario(txtuser.Text, txtpass.Text);
                     if (validacionUsuario == true)
                     {
+                        this.Hide();
                         //FormMainMenu mainMenu = new FormMainMenu();
-                        MessageBox.Show("Bienvenido " + UserCache.nombre + ", " + UserCache.apellido);
+                        FormSplashForm splashForm = new FormSplashForm();
+                        splashForm.ShowDialog();                        
                         //mainMenu.Show();
                         //mainMenu.FormClosed += cerrarSesion;
                         this.Hide();
                     }
                     else
                     {
-                        msgError("Incorrect username or password entered. \n   Please try again.");
-                        txtpass.Text = "Password";
+                        msgError("Usuario o Contraseña incorrecto. \n   Por favor, intente de nuevo.");
+                        txtpass.Text = "Contraseña";
                         txtpass.UseSystemPasswordChar = false;
                         txtuser.Focus();
                     }
                 }
-                else msgError("Please enter password.");
+                else msgError("Por favor, ingrese la contraseña");
             }
-            else msgError("Please enter username.");
+            else msgError("Por favor, ingrese el usuario.");
         }
 
         private void msgError(string msg)
@@ -132,9 +134,9 @@ namespace GUI
 
         private void cerrarSesion(object sender, FormClosedEventArgs e)
         {
-            txtpass.Text = "Password";
+            txtpass.Text = "Contraseña";
             txtpass.UseSystemPasswordChar = false;
-            txtuser.Text = "Username";
+            txtuser.Text = "Usuario";
             lblErrorMessage.Visible = false;
             this.Show();
         }

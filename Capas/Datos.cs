@@ -106,43 +106,43 @@ namespace Capas
             return login;
         }
 
-        //public bool validarExistenEntidades()
-        //{
-        //    bool validacion = false;
-        //    try
-        //    {
-        //        abrirConexion();
-        //        SqlCommand cmdEstudiante = new SqlCommand("SELECT * FROM Estudiantes", abrirConexion());
-        //        SqlDataReader drEstudiante = cmdEstudiante.ExecuteReader();
-        //        SqlCommand cmdMaestro = new SqlCommand("SELECT * FROM Maestros", abrirConexion());
-        //        SqlDataReader drMaestro = cmdMaestro.ExecuteReader();
-        //        SqlCommand cmdDirector = new SqlCommand("SELECT * FROM Directores", abrirConexion());
-        //        SqlDataReader drDirector = cmdDirector.ExecuteReader();
-        //        if (drEstudiante.Read())
-        //        {
-        //            validacion = true;
-        //        }
-        //        if (drMaestro.Read())
-        //        {
-        //            validacion = true;
-        //        }
-        //        if (drDirector.Read())
-        //        {
-        //            validacion = true;
-        //        }
-        //        else
-        //        {
-        //            validacion = false;
-        //        }
-        //        cerrarConexion();
-        //    }
-        //    catch (Exception ex)
-        //    {
+        public bool validarExistenEntidades()
+        {
+            bool validacion = false;
+            try
+            {
+                abrirConexion();
+                SqlCommand cmdEstudiante = new SqlCommand("SELECT * FROM Estudiantes", abrirConexion());
+                SqlDataReader drEstudiante = cmdEstudiante.ExecuteReader();
+                SqlCommand cmdMaestro = new SqlCommand("SELECT * FROM Maestros", abrirConexion());
+                SqlDataReader drMaestro = cmdMaestro.ExecuteReader();
+                SqlCommand cmdDirector = new SqlCommand("SELECT * FROM Directores", abrirConexion());
+                SqlDataReader drDirector = cmdDirector.ExecuteReader();
+                if (drEstudiante.Read())
+                {
+                    validacion = true;
+                }
+                if (drMaestro.Read())
+                {
+                    validacion = true;
+                }
+                if (drDirector.Read())
+                {
+                    validacion = true;
+                }
+                else
+                {
+                    validacion = false;
+                }
+                cerrarConexion();
+            }
+            catch (Exception ex)
+            {
 
-        //    }
+            }
 
-        //    return validacion;
-        //}
+            return validacion;
+        }
 
         //Form director
         // Tabla Estudiantes

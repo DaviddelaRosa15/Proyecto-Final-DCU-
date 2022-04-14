@@ -9,7 +9,8 @@ namespace GUI
 {
     internal static class Program
     {
-        //public static bool validacionEntidades = false;
+        public static bool validacionEntidades = false;
+        
         //public static bool validacionAcceso = false;
         //public static string tipoUsuario = UserCache.tipo;
         /// <summary>
@@ -20,7 +21,16 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormSplashForm());
+            Dominio dominio = new Dominio();
+            //validacionEntidades = dominio.validarExistenciaEntidades();
+            //if (validacionEntidades)
+            //{
+                Application.Run(new FormSplashForm());
+            //}
+            //else
+            //{
+                //Application.Run(new ());
+            //}
         }
     }
 }

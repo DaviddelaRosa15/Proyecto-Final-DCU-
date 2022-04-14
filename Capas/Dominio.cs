@@ -20,14 +20,14 @@ namespace Capas
             return validacion;
         }
 
-        //public bool validarExistenciaEntidades()
-        //{
-        //    bool validacion = false;
+        public bool validarExistenciaEntidades()
+        {
+            bool validacion = false;
 
-        //    validacion = datos.validarExistenEntidades();
+            validacion = datos.validarExistenEntidades();
 
-        //    return validacion;
-        //}
+            return validacion;
+        }
 
         //Form Directores
         //Tabla Estudiantes
