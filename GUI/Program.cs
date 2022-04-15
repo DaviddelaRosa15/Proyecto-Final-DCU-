@@ -26,6 +26,7 @@ namespace GUI
             //if (validacionEntidades)
             //{
                 Application.Run(new FormSplashForm());
+                Application.Run(new FormDirector());
             //}
             //else
             //{
