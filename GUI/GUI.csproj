@@ -67,33 +67,51 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDirector.cs">
+    <Compile Include="Forms Principales\FormDirector.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDirector.Designer.cs">
+    <Compile Include="Forms Principales\FormDirector.Designer.cs">
       <DependentUpon>FormDirector.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="Forms Principales\FormEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
+    <Compile Include="Forms Principales\FormEstudiante.Designer.cs">
+      <DependentUpon>FormEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Principales\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Principales\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSplashForm.cs">
+    <Compile Include="Forms Principales\FormMaestro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSplashForm.Designer.cs">
+    <Compile Include="Forms Principales\FormMaestro.Designer.cs">
+      <DependentUpon>FormMaestro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Principales\FormSplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Principales\FormSplashForm.Designer.cs">
       <DependentUpon>FormSplashForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormDirector.resx">
+    <EmbeddedResource Include="Forms Principales\FormDirector.resx">
       <DependentUpon>FormDirector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="Forms Principales\FormEstudiante.resx">
+      <DependentUpon>FormEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Principales\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSplashForm.resx">
+    <EmbeddedResource Include="Forms Principales\FormMaestro.resx">
+      <DependentUpon>FormMaestro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Principales\FormSplashForm.resx">
       <DependentUpon>FormSplashForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,6 +142,9 @@
       <Project>{80fc51b0-dc60-4e52-ab79-8496470dcf25}</Project>
       <Name>Capas</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ChildForms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
