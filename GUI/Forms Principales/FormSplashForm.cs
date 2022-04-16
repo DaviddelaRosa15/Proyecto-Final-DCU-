@@ -42,7 +42,7 @@ namespace GUI
 
         private void FormSplashForm_Load(object sender, EventArgs e)
         {
-            lblUsuario.Text = UserCache.nombre + ", " + UserCache.apellido;
+            lblUsuario.Text = UserCache.nombre + " " + UserCache.apellido;
             this.Opacity = 0.0;           
             circularProgressBar1.Value = 0;
             circularProgressBar1.Minimum = 0;

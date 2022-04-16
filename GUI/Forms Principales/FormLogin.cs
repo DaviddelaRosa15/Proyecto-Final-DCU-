@@ -106,9 +106,26 @@ namespace GUI
                     if (validacionUsuario == true)
                     {
                         this.Hide();
-                        //FormMainMenu mainMenu = new FormMainMenu();
+                        FormDirector director = new FormDirector();
+                        FormEstudiante estudiante = new FormEstudiante();
+                        FormMaestro maestro = new FormMaestro();
                         FormSplashForm splashForm = new FormSplashForm();
-                        splashForm.ShowDialog();                        
+                        splashForm.ShowDialog();
+                        switch (UserCache.tipo)
+                        {
+                            case "Director":
+                                director.Show();
+                                director.FormClosed += cerrarSesion;
+                                break;
+                            case "Estudiante":
+                                estudiante.Show();
+                                estudiante.FormClosed += cerrarSesion;
+                                break;
+                            case "Maestro":
+                                maestro.Show();
+                                maestro.FormClosed += cerrarSesion;
+                                break;
+                        }
                         //mainMenu.Show();
                         //mainMenu.FormClosed += cerrarSesion;
                         this.Hide();

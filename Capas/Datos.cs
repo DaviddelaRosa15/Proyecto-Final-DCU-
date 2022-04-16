@@ -34,12 +34,8 @@ namespace Capas
             {
 
                 abrirConexion();
-                SqlCommand cmdEstudiante = new SqlCommand("SELECT Usuario, Contraseña FROM Estudiantes WHERE Usuario ='" + userName + "' AND Contraseña ='" + password + "'", abrirConexion());
-                SqlDataReader drEstudiante = cmdEstudiante.ExecuteReader();
-                SqlCommand cmdMaestro = new SqlCommand("SELECT Usuario, Contraseña FROM Maestros WHERE Usuario ='" + userName + "' AND Contraseña ='" + password + "'", abrirConexion());
-                SqlDataReader drMaestro = cmdMaestro.ExecuteReader();
-                SqlCommand cmdDirector = new SqlCommand("SELECT Usuario, Contraseña FROM Directores WHERE Usuario ='" + userName + "' AND Contraseña ='" + password + "'", abrirConexion());
-                SqlDataReader drDirector = cmdDirector.ExecuteReader();
+                SqlCommand cmdEstudiante = new SqlCommand("SELECT * FROM Estudiantes WHERE Usuario ='" + userName + "' AND Contraseña ='" + password + "'", abrirConexion());
+                SqlDataReader drEstudiante = cmdEstudiante.ExecuteReader();               
                 if (drEstudiante.HasRows)
                 {
                     if (drEstudiante.Read())
@@ -47,7 +43,7 @@ namespace Capas
                         UserCache.id = drEstudiante.GetInt32(0);
                         UserCache.nombre = drEstudiante.GetString(1);
                         UserCache.apellido = drEstudiante.GetString(2);
-                        UserCache.edad = drEstudiante.GetString(3);
+                        UserCache.edad = Convert.ToString(drEstudiante.GetInt32(3));
                         UserCache.matricula = drEstudiante.GetString(4);
                         UserCache.telefono = drEstudiante.GetString(5);
                         UserCache.direccion = drEstudiante.GetString(6);
@@ -58,6 +54,10 @@ namespace Capas
                     }
                     login = true;
                 }
+                drEstudiante.Close();
+
+                SqlCommand cmdMaestro = new SqlCommand("SELECT * FROM Maestros WHERE Usuario ='" + userName + "' AND Contraseña ='" + password + "'", abrirConexion());
+                SqlDataReader drMaestro = cmdMaestro.ExecuteReader();
                 if (drMaestro.HasRows)
                 {
                     if (drMaestro.Read())
@@ -65,7 +65,7 @@ namespace Capas
                         UserCache.id = drMaestro.GetInt32(0);
                         UserCache.nombre = drMaestro.GetString(1);
                         UserCache.apellido = drMaestro.GetString(2);
-                        UserCache.edad = drMaestro.GetString(3);
+                        UserCache.edad = Convert.ToString(drMaestro.GetInt32(3));
                         UserCache.telefono = drMaestro.GetString(4);
                         UserCache.direccion = drMaestro.GetString(5);
                         UserCache.email = drMaestro.GetString(6);
@@ -75,6 +75,10 @@ namespace Capas
                     }
                     login = true;
                 }
+                drMaestro.Close();
+
+                SqlCommand cmdDirector = new SqlCommand("SELECT * FROM Directores WHERE Usuario ='" + userName + "' AND Contraseña ='" + password + "'", abrirConexion());
+                SqlDataReader drDirector = cmdDirector.ExecuteReader();
                 if (drDirector.HasRows)
                 {
                     if (drDirector.Read())
@@ -82,7 +86,7 @@ namespace Capas
                         UserCache.id = drDirector.GetInt32(0);
                         UserCache.nombre = drDirector.GetString(1);
                         UserCache.apellido = drDirector.GetString(2);
-                        UserCache.edad = drDirector.GetString(3);
+                        UserCache.edad = Convert.ToString(drDirector.GetInt32(3));
                         UserCache.telefono = drDirector.GetString(4);
                         UserCache.direccion = drDirector.GetString(5);
                         UserCache.email = drDirector.GetString(6);
@@ -92,10 +96,7 @@ namespace Capas
                     }
                     login = true;
                 }
-                else
-                {
-                    login = false;
-                }
+                drDirector.Close();
                 cerrarConexion();
             }
             catch (Exception ex)
@@ -114,25 +115,23 @@ namespace Capas
                 abrirConexion();
                 SqlCommand cmdEstudiante = new SqlCommand("SELECT * FROM Estudiantes", abrirConexion());
                 SqlDataReader drEstudiante = cmdEstudiante.ExecuteReader();
+                if (drEstudiante.HasRows)
+                {
+                    validacion = true;                    
+                }
+                drEstudiante.Close();
                 SqlCommand cmdMaestro = new SqlCommand("SELECT * FROM Maestros", abrirConexion());
                 SqlDataReader drMaestro = cmdMaestro.ExecuteReader();
+                if (drMaestro.HasRows)
+                {
+                    validacion = true;
+                }
+                drMaestro.Close();
                 SqlCommand cmdDirector = new SqlCommand("SELECT * FROM Directores", abrirConexion());
                 SqlDataReader drDirector = cmdDirector.ExecuteReader();
-                if (drEstudiante.Read())
+                if (drDirector.HasRows)
                 {
                     validacion = true;
-                }
-                if (drMaestro.Read())
-                {
-                    validacion = true;
-                }
-                if (drDirector.Read())
-                {
-                    validacion = true;
-                }
-                else
-                {
-                    validacion = false;
                 }
                 cerrarConexion();
             }

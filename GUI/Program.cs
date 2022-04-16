@@ -22,16 +22,16 @@ namespace GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Dominio dominio = new Dominio();
-            //validacionEntidades = dominio.validarExistenciaEntidades();
-            //if (validacionEntidades)
-            //{
-                //Application.Run(new FormLogin());
-            //}
-            //else
-            //{
-            Application.Run(new FormSplashForm());
-            Application.Run(new FormDirector());
-            //}
+            validacionEntidades = dominio.validarExistenciaEntidades();
+            if (validacionEntidades)
+            {
+                Application.Run(new FormLogin());
+            }
+            else
+            {
+                Application.Run(new FormSplashForm());
+                Application.Run(new FormDirector());
+            }
         }
     }
 }

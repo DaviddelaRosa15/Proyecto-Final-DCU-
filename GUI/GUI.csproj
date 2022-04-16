@@ -67,6 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildForms\ChildFormMaestro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ChildFormMaestro.Designer.cs">
+      <DependentUpon>ChildFormMaestro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Principales\FormDirector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChildForms\ChildFormMaestro.resx">
+      <DependentUpon>ChildFormMaestro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Principales\FormDirector.resx">
       <DependentUpon>FormDirector.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,8 +152,6 @@
       <Name>Capas</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ChildForms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
