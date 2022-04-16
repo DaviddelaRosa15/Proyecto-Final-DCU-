@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.ibtnCursos = new FontAwesome.Sharp.IconButton();
             this.ibtnEstudiantes = new FontAwesome.Sharp.IconButton();
@@ -36,13 +37,24 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnInicio = new System.Windows.Forms.PictureBox();
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
+            this.btnCerrar = new FontAwesome.Sharp.IconButton();
+            this.btnMaximizar = new FontAwesome.Sharp.IconButton();
             this.lblChildFormActual = new System.Windows.Forms.Label();
             this.iconChildFormActual = new FontAwesome.Sharp.IconPictureBox();
+            this.panelSombra = new System.Windows.Forms.Panel();
+            this.panelEscritorio = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tmFechayHora = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconChildFormActual)).BeginInit();
+            this.panelEscritorio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -172,6 +184,9 @@
             // panelTitulo
             // 
             this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panelTitulo.Controls.Add(this.btnMinimizar);
+            this.panelTitulo.Controls.Add(this.btnCerrar);
+            this.panelTitulo.Controls.Add(this.btnMaximizar);
             this.panelTitulo.Controls.Add(this.lblChildFormActual);
             this.panelTitulo.Controls.Add(this.iconChildFormActual);
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -181,6 +196,58 @@
             this.panelTitulo.TabIndex = 1;
             this.panelTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitulo_Paint);
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.ForeColor = System.Drawing.Color.White;
+            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizar.IconColor = System.Drawing.Color.White;
+            this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimizar.IconSize = 26;
+            this.btnMinimizar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMinimizar.Location = new System.Drawing.Point(905, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(20, 23);
+            this.btnMinimizar.TabIndex = 5;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnCerrar.IconColor = System.Drawing.Color.White;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrar.IconSize = 26;
+            this.btnCerrar.Location = new System.Drawing.Point(957, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(20, 23);
+            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.ForeColor = System.Drawing.Color.White;
+            this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximizar.IconColor = System.Drawing.Color.White;
+            this.btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMaximizar.IconSize = 26;
+            this.btnMaximizar.Location = new System.Drawing.Point(931, 3);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(20, 23);
+            this.btnMaximizar.TabIndex = 4;
+            this.btnMaximizar.UseVisualStyleBackColor = true;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
             // lblChildFormActual
             // 
@@ -207,23 +274,85 @@
             this.iconChildFormActual.TabStop = false;
             this.iconChildFormActual.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
+            // panelSombra
+            // 
+            this.panelSombra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panelSombra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSombra.Location = new System.Drawing.Point(220, 80);
+            this.panelSombra.Name = "panelSombra";
+            this.panelSombra.Size = new System.Drawing.Size(980, 10);
+            this.panelSombra.TabIndex = 2;
+            // 
+            // panelEscritorio
+            // 
+            this.panelEscritorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelEscritorio.Controls.Add(this.label2);
+            this.panelEscritorio.Controls.Add(this.label1);
+            this.panelEscritorio.Controls.Add(this.pictureBox1);
+            this.panelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEscritorio.Location = new System.Drawing.Point(220, 90);
+            this.panelEscritorio.Name = "panelEscritorio";
+            this.panelEscritorio.Size = new System.Drawing.Size(980, 580);
+            this.panelEscritorio.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(479, 298);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 30);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumPurple;
+            this.label1.Location = new System.Drawing.Point(416, 328);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 21);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(420, 147);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(185, 133);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tmFechayHora
+            // 
+            this.tmFechayHora.Enabled = true;
+            this.tmFechayHora.Tick += new System.EventHandler(this.tmFechayHora_Tick);
+            // 
             // FormDirector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 670);
+            this.Controls.Add(this.panelEscritorio);
+            this.Controls.Add(this.panelSombra);
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDirector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDirector";
+            this.Load += new System.EventHandler(this.FormDirector_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconChildFormActual)).EndInit();
+            this.panelEscritorio.ResumeLayout(false);
+            this.panelEscritorio.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,5 +369,14 @@
         private System.Windows.Forms.Panel panelTitulo;
         private FontAwesome.Sharp.IconPictureBox iconChildFormActual;
         private System.Windows.Forms.Label lblChildFormActual;
+        private System.Windows.Forms.Panel panelSombra;
+        private System.Windows.Forms.Panel panelEscritorio;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer tmFechayHora;
+        private FontAwesome.Sharp.IconButton btnMinimizar;
+        private FontAwesome.Sharp.IconButton btnCerrar;
+        private FontAwesome.Sharp.IconButton btnMaximizar;
     }
 }

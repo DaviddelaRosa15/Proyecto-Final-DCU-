@@ -25,6 +25,9 @@ namespace GUI
             bordeBTN = new Panel();
             bordeBTN.Size = new Size(7, 60);
             panelMenu.Controls.Add(bordeBTN);
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
@@ -75,6 +78,25 @@ namespace GUI
             }
         }
 
+        private void OpenChildForm(Form childForm)
+        {
+            //open only form
+            if (childFormActual != null)
+            {
+                childFormActual.Close();
+            }
+            childFormActual = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelEscritorio.Controls.Add(childForm);
+            panelEscritorio.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblChildFormActual.Text = childForm.Text;
+        }
+
         private void ibtnPerfil_Click(object sender, EventArgs e)
         {
             activarBoton(sender, colores.color1);
@@ -97,6 +119,10 @@ namespace GUI
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
+            if (childFormActual != null)
+            {
+                childFormActual.Close();
+            }
             reset();
         }
 
@@ -128,6 +154,35 @@ namespace GUI
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void FormDirector_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tmFechayHora_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToLongDateString();
+            label2.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Maximized;
+            else
+                WindowState = FormWindowState.Normal;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

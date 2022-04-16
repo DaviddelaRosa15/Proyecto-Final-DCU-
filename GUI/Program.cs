@@ -25,7 +25,7 @@ namespace GUI
             //validacionEntidades = dominio.validarExistenciaEntidades();
             //if (validacionEntidades)
             //{
-                Application.Run(new FormSplashForm());
+                //Application.Run(new FormSplashForm());
                 Application.Run(new FormDirector());
             //}
             //else
