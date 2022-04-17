@@ -138,5 +138,26 @@ namespace Capas
             return tabla;
         }
         //Form Estudiante
+
+        public DataTable llenarCBBCursos()
+        {
+            DataTable tabla = new DataTable();
+            tabla = datos.llenarCBBCursos();
+            return tabla;
+        }
+
+        public DataTable llenarCBBCursos(int idCurso)
+        {
+            DataTable tabla = new DataTable();
+            tabla = datos.llenarCBBCursos();
+            return tabla;
+        }
+
+        public DataTable llenarCBBMaestros()
+        {
+            DataTable tabla = new DataTable();
+            tabla = datos.llenarCBBMaestros();
+            return tabla;
+        }
     }
 }

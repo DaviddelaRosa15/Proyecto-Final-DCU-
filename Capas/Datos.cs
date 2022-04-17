@@ -395,5 +395,96 @@ namespace Capas
             return tabla;
         }
         //Form Estudiante
+
+        /*Metodos para que se muestren los cursos o maestros disponibles en los
+        Combobox*/
+        public DataTable llenarCBBCursos()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                abrirConexion();
+                SqlCommand cmd = new SqlCommand("select idCurso, Nombre from Cursos", abrirConexion());
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            cerrarConexion();
+        }
+
+        public DataTable llenarCBBCursos(int idCurso)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                abrirConexion();
+                SqlCommand cmd = new SqlCommand("select idCurso, Nombre from Cursos where idCurso = '" + idCurso + "'", abrirConexion());
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            cerrarConexion();
+        }
+
+        public DataTable llenarCBBMaestros()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                abrirConexion();
+                SqlCommand cmd = new SqlCommand("select idMaestro, Concat(Nombre, ' ', Apellido) AS 'Nombre' from Maestros", abrirConexion());
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            cerrarConexion();
+        }
+
+        public DataTable llenarCBBMaestros(int idMaestro)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                abrirConexion();
+                SqlCommand cmd = new SqlCommand("select idMaestro, Concat(Nombre, ' ', Apellido) AS 'Nombre' from Maestros " +
+                    "where idMaestro = '"+ idMaestro + "'", abrirConexion());
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            cerrarConexion();
+        }
     }
 }

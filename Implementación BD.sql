@@ -406,6 +406,7 @@ insert into Maestros values ('Juan','Lopez',40,'8092789772','Brisas del Este, sk
 insert into cursos values ('Electricidad básica', 1)
 insert into cursos values ('Electricidad II', 1)
 insert into Maestros values ('Trinidad','Perez',50,'8092709772','Brisas del Este, ddssk,ss','trinidadz12@gmail.com','tri','trrr4422')
+insert into Directores values ('David N.','de la Rosa L.',50,'8092788772','Brisas del Este, Callae Santiago,#81','delarosadavid377@gmail.com','david15','ddl#1508')
 update Calificaciones set notaFinal = 96 where idEstudiante = 4;
 select * FROM Cursos;
 select * from Maestros;

@@ -111,6 +111,7 @@ namespace GUI
         private void ibtnEstudiantes_Click(object sender, EventArgs e)
         {
             activarBoton(sender, colores.color3);
+            OpenChildForm(new ChildFormEstudiante());
         }
 
         private void ibtnCursos_Click(object sender, EventArgs e)
