@@ -14,6 +14,7 @@ namespace GUI
     public partial class MaestroChildFormCalificacion : Form
     {
         Dominio dominio = new Dominio();
+        private string idCalificacion;
 
         public MaestroChildFormCalificacion()
         {
@@ -28,7 +29,7 @@ namespace GUI
 
         private void mostrarCalificaciones()
         {
-            dataGridView1.DataSource = dominio.mostrarCalificaciones(UserCache.id); ;
+            dataGridView1.DataSource = dominio.mostrarCalificaciones(1); ;
         }
 
         private void txtCalificacion_KeyPress(object sender, KeyPressEventArgs e)
@@ -39,14 +40,41 @@ namespace GUI
             }
         }
 
+        private void clearForm()
+        {
+            lblNombre.Text = "";
+            lblMatricula.Text = "";
+            lblCurso.Text = "";
+            txtCalificacion.Clear();
+        }
+
         private void btnModify_Click(object sender, EventArgs e)
         {
-
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                idCalificacion = dataGridView1.CurrentRow.Cells["idCalificacion"].Value.ToString();
+                lblNombre.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
+                lblMatricula.Text = dataGridView1.CurrentRow.Cells["Matricula"].Value.ToString();
+                lblCurso.Text = dataGridView1.CurrentRow.Cells["Curso"].Value.ToString();
+                txtCalificacion.Text = dataGridView1.CurrentRow.Cells["notaFinal"].Value.ToString();
+            }
+            else
+                MessageBox.Show("Seleccione una fila. Por favor");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            try
+                {
+                    dominio.actualizarCalificaciones(int.Parse(idCalificacion), int.Parse(txtCalificacion.Text));
+                    MessageBox.Show("¡Se modificó correctamente!");
+                    mostrarCalificaciones();
+                    clearForm();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudieron editar los datos por: " + ex);
+                }
         }
     }
     

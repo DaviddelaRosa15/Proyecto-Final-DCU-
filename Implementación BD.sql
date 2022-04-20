@@ -289,12 +289,10 @@ CREATE PROCEDURE SpCalificacionesActualizar
 @notaFinal AS INT
 AS
 BEGIN
-UPDATE Calificaciones
-SET notaFinal = @notaFinal
+UPDATE Calificaciones SET notaFinal = @notaFinal
 WHERE idCalificacion = @idCalificacion
 END
 GO
-
 CREATE PROCEDURE SpCalificacionesEliminar
 @IdCalificacion AS INT
 AS
@@ -417,5 +415,6 @@ GO
 exec spCursosMaestros 1;
 exec spCalificacionesEstudiantes 4;
 exec SpCalificacionesListar 1;
+exec SpCalificacionesActualizar 2, 76;
 select * from Estudiantes
 exec SpCursosEliminar 4

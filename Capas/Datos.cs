@@ -371,10 +371,13 @@ namespace Capas
         public void actualizarCalificaciones(int idCalificacion, int notaFinal)
         {
             comando.Connection = abrirConexion();
-            comando.CommandText = "SpCalificacionesActualizar";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idCalificacion", idCalificacion);
-            comando.Parameters.AddWithValue("@notaFinal", notaFinal);
+            comando.CommandText = "UPDATE Calificaciones SET notaFinal = '" + notaFinal +
+                "' where idCalificacion = '" + idCalificacion + "'";
+            comando.CommandType = CommandType.Text;
+            //comando.CommandText = "SpCalificacionesActualizar";
+            //comando.CommandType = CommandType.StoredProcedure;
+            //comando.Parameters.AddWithValue("@idCalificacion", idCalificacion);
+            //comando.Parameters.AddWithValue("@notaFinal", notaFinal);
             comando.ExecuteNonQuery();
 
             comando.Parameters.Clear();
