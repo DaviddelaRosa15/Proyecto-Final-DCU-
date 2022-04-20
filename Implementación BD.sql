@@ -263,14 +263,14 @@ DELETE FROM Cursos
 WHERE IdCurso = @IdCurso
 END
 GO
-
-CREATE PROCEDURE SpCursosListar
+drop procedure SpCursosListar
 AS
 BEGIN
 SELECT idCurso,
-Nombre,
-idMaestro
-FROM Cursos
+c.Nombre,
+c.idMaestro,
+CONCAT(m.Nombre, ' ', m.Apellido) AS 'Nombre Profesor'
+FROM Cursos c inner join Maestros m on (c.idMaestro = m.idMaestro)
 END
 GO
 -- Tabla Calificaciones

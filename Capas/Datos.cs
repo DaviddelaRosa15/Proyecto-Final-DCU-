@@ -417,29 +417,10 @@ namespace Capas
 
                 throw new Exception(ex.Message);
             }
-            cerrarConexion();
-        }
-
-        public DataTable llenarCBBCursos(int idCurso)
-        {
-            DataTable dt = new DataTable();
-
-            try
+            finally
             {
-                abrirConexion();
-                SqlCommand cmd = new SqlCommand("select idCurso, Nombre from Cursos where idCurso = '" + idCurso + "'", abrirConexion());
-                cmd.CommandType = CommandType.Text;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-
-                return dt;
+                cerrarConexion();
             }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            cerrarConexion();
         }
 
         public DataTable llenarCBBMaestros()
@@ -449,7 +430,7 @@ namespace Capas
             try
             {
                 abrirConexion();
-                SqlCommand cmd = new SqlCommand("select idMaestro, Concat(Nombre, ' ', Apellido) AS 'Nombre' from Maestros", abrirConexion());
+                SqlCommand cmd = new SqlCommand("select idMaestro, Nombre from Maestros", abrirConexion());
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
@@ -461,30 +442,10 @@ namespace Capas
 
                 throw new Exception(ex.Message);
             }
-            cerrarConexion();
-        }
-
-        public DataTable llenarCBBMaestros(int idMaestro)
-        {
-            DataTable dt = new DataTable();
-
-            try
+            finally
             {
-                abrirConexion();
-                SqlCommand cmd = new SqlCommand("select idMaestro, Concat(Nombre, ' ', Apellido) AS 'Nombre' from Maestros " +
-                    "where idMaestro = '"+ idMaestro + "'", abrirConexion());
-                cmd.CommandType = CommandType.Text;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-
-                return dt;
+                cerrarConexion();
             }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            cerrarConexion();
         }
     }
 }

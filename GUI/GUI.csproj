@@ -67,6 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildForms\ChildFormCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ChildFormCurso.Designer.cs">
+      <DependentUpon>ChildFormCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildForms\ChildFormEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChildForms\ChildFormCurso.resx">
+      <DependentUpon>ChildFormCurso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\ChildFormEstudiante.resx">
       <DependentUpon>ChildFormEstudiante.cs</DependentUpon>
     </EmbeddedResource>

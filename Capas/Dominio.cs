@@ -146,13 +146,6 @@ namespace Capas
             return tabla;
         }
 
-        public DataTable llenarCBBCursos(int idCurso)
-        {
-            DataTable tabla = new DataTable();
-            tabla = datos.llenarCBBCursos();
-            return tabla;
-        }
-
         public DataTable llenarCBBMaestros()
         {
             DataTable tabla = new DataTable();

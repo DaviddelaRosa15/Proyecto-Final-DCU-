@@ -11,23 +11,23 @@ using Capas;
 
 namespace GUI
 {
-    public partial class ChildFormEstudiante : Form
+    public partial class ChildFormCurso : Form
     {
         Dominio dominio = new Dominio();
-        private string idEstudiante = null;
+        private string idCurso = null;
         private bool modificar = false;
         private DataGridView dataGrid;
         private int textCBB;
 
-        public ChildFormEstudiante()
+        public ChildFormCurso()
         {
             InitializeComponent();
         }
 
-        private void ChildFormEstudiante_Load(object sender, EventArgs e)
+        private void ChildFormCurso_Load(object sender, EventArgs e)
         {
             mostrarEventos();
-            cargarCursos();
+            cargarMaestros();
         }
 
         private void descargarDataGrid()
@@ -37,7 +37,7 @@ namespace GUI
 
         private void mostrarEventos()
         {
-            dataGridView1.DataSource = dominio.mostrarEstudiantes(); ;
+            dataGridView1.DataSource = dominio.mostrarCursos(); ;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -47,8 +47,7 @@ namespace GUI
             {
                 try
                 {
-                    dominio.insertarEstudiantes(txtNombre.Text, txtApellido.Text, int.Parse(txtEdad.Text), txtMatricula.Text, 
-                        txtTelefono.Text, txtDireccion.Text, txtEmail.Text, txtUsuario.Text, txtContraseña.Text, int.Parse(cbbCurso.SelectedIndex.ToString()));
+                    dominio.insertarCursos(txtNombre.Text, int.Parse(cbbMaestro.SelectedValue.ToString()));
                     MessageBox.Show("¡Se insertó correctamente!");
                     descargarDataGrid();
                     mostrarEventos();
@@ -64,8 +63,7 @@ namespace GUI
             {
                 try
                 {
-                    dominio.actualizarEstudiantes(int.Parse(idEstudiante), txtNombre.Text, txtApellido.Text, int.Parse(txtEdad.Text), txtMatricula.Text,
-                        txtTelefono.Text, txtDireccion.Text, txtEmail.Text, txtUsuario.Text, txtContraseña.Text, int.Parse(cbbCurso.SelectedValue.ToString()));
+                    dominio.actualizarCursos(int.Parse(idCurso), txtNombre.Text, int.Parse(cbbMaestro.SelectedValue.ToString()));
                     MessageBox.Show("¡Se modificó correctamente!");
                     descargarDataGrid();
                     mostrarEventos();
@@ -84,14 +82,6 @@ namespace GUI
         private void clearForm()
         {
             txtNombre.Clear();
-            txtNombre.Clear();
-            txtApellido.Clear();
-            txtEdad.Clear();
-            txtTelefono.Clear();
-            txtDireccion.Clear();
-            txtEmail.Clear();
-            txtUsuario.Clear();
-            txtContraseña.Clear();
         }
 
         private void btnModify_Click(object sender, EventArgs e)
@@ -101,15 +91,7 @@ namespace GUI
                 
                 modificar = true;
                 txtNombre.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
-                txtApellido.Text = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
-                txtEdad.Text = dataGridView1.CurrentRow.Cells["Edad"].Value.ToString();
-                txtTelefono.Text = dataGridView1.CurrentRow.Cells["Telefono"].Value.ToString();
-                txtDireccion.Text = dataGridView1.CurrentRow.Cells["Direccion"].Value.ToString();
-                txtEmail.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
-                txtUsuario.Text = dataGridView1.CurrentRow.Cells["Usuario"].Value.ToString();
-                txtContraseña.Text = dataGridView1.CurrentRow.Cells["Contraseña"].Value.ToString();
-                cbbCurso.SelectedValue = int.Parse(dataGridView1.CurrentRow.Cells["Curso"].Value.ToString());
-                idEstudiante = dataGridView1.CurrentRow.Cells["idEstudiante"].Value.ToString();
+                cbbMaestro.SelectedValue = int.Parse(dataGridView1.CurrentRow.Cells["idMaestro"].Value.ToString());
             }
             else
                 MessageBox.Show("Seleccione una fila. Por favor");
@@ -119,12 +101,12 @@ namespace GUI
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                idEstudiante = dataGridView1.CurrentRow.Cells["idEstudiante"].Value.ToString();
-                DialogResult result = MessageBox.Show("¿Seguro que quiere eliminar al usuario?", "Confirmación", MessageBoxButtons.YesNo);
+                idCurso = dataGridView1.CurrentRow.Cells["idCurso"].Value.ToString();
+                DialogResult result = MessageBox.Show("¿Seguro que quiere eliminar el curso?", "Confirmación", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
                 {
-                    dominio.eliminarEstudiantes(int.Parse(idEstudiante));
+                    dominio.eliminarCursos(int.Parse(idCurso));
                     MessageBox.Show("Eliminado correctamente");
                     descargarDataGrid();
                     mostrarEventos();
@@ -135,11 +117,11 @@ namespace GUI
                 MessageBox.Show("Seleccione una fila por favor");
         }
 
-        private void cargarCursos()
+        private void cargarMaestros()
         {
-            cbbCurso.DisplayMember = "Nombre";
-            cbbCurso.ValueMember = "idCurso";
-            cbbCurso.DataSource = dominio.llenarCBBCursos();
+            cbbMaestro.DisplayMember = "Nombre";
+            cbbMaestro.ValueMember = "idMaestro";
+            cbbMaestro.DataSource = dominio.llenarCBBMaestros();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

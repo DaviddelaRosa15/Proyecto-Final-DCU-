@@ -162,5 +162,36 @@ namespace GUI
         {
 
         }
+
+        private void btnlogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void FormLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void FormLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void txtpass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToInt32(e.KeyChar) == 13)
+            {
+                btnlogin_Click(sender, e);
+            }
+        }
+
+        private void txtuser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToInt32(e.KeyChar) == 13)
+            {
+                btnlogin_Click(sender, e);
+            }
+        }
     }
 }
