@@ -187,5 +187,17 @@ namespace GUI
         {
             Application.Exit();
         }
+
+        private void ibtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to log out?", "Warning",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
+        }
+
+        private void ibtnAyuda_Click(object sender, EventArgs e)
+        {
+            activarBoton(sender, colores.color6);
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.ibtnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.ibtnCalificaciones = new FontAwesome.Sharp.IconButton();
             this.ibtnPerfil = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -46,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tmFechayHora = new System.Windows.Forms.Timer(this.components);
+            this.ibtnAyuda = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
@@ -58,6 +60,8 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.ibtnAyuda);
+            this.panelMenu.Controls.Add(this.ibtnCerrarSesion);
             this.panelMenu.Controls.Add(this.ibtnCalificaciones);
             this.panelMenu.Controls.Add(this.ibtnPerfil);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -66,6 +70,29 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 670);
             this.panelMenu.TabIndex = 0;
+            // 
+            // ibtnCerrarSesion
+            // 
+            this.ibtnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ibtnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.ibtnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnCerrarSesion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ibtnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleLeft;
+            this.ibtnCerrarSesion.IconColor = System.Drawing.Color.Gainsboro;
+            this.ibtnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnCerrarSesion.IconSize = 32;
+            this.ibtnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnCerrarSesion.Location = new System.Drawing.Point(0, 610);
+            this.ibtnCerrarSesion.Name = "ibtnCerrarSesion";
+            this.ibtnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ibtnCerrarSesion.Size = new System.Drawing.Size(220, 60);
+            this.ibtnCerrarSesion.TabIndex = 8;
+            this.ibtnCerrarSesion.Text = "Cerrar sesion";
+            this.ibtnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnCerrarSesion.UseVisualStyleBackColor = true;
+            this.ibtnCerrarSesion.Click += new System.EventHandler(this.ibtnCerrarSesion_Click);
             // 
             // ibtnCalificaciones
             // 
@@ -280,6 +307,29 @@
             this.tmFechayHora.Enabled = true;
             this.tmFechayHora.Tick += new System.EventHandler(this.tmFechayHora_Tick);
             // 
+            // ibtnAyuda
+            // 
+            this.ibtnAyuda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnAyuda.FlatAppearance.BorderSize = 0;
+            this.ibtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnAyuda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnAyuda.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ibtnAyuda.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
+            this.ibtnAyuda.IconColor = System.Drawing.Color.Gainsboro;
+            this.ibtnAyuda.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnAyuda.IconSize = 32;
+            this.ibtnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnAyuda.Location = new System.Drawing.Point(0, 260);
+            this.ibtnAyuda.Name = "ibtnAyuda";
+            this.ibtnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ibtnAyuda.Size = new System.Drawing.Size(220, 60);
+            this.ibtnAyuda.TabIndex = 9;
+            this.ibtnAyuda.Text = "Ayuda";
+            this.ibtnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnAyuda.UseVisualStyleBackColor = true;
+            this.ibtnAyuda.Click += new System.EventHandler(this.ibtnAyuda_Click);
+            // 
             // FormEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,5 +376,7 @@
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private FontAwesome.Sharp.IconButton btnCerrar;
         private FontAwesome.Sharp.IconButton btnMaximizar;
+        private FontAwesome.Sharp.IconButton ibtnCerrarSesion;
+        private FontAwesome.Sharp.IconButton ibtnAyuda;
     }
 }

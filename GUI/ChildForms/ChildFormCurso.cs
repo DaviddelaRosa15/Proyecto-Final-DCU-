@@ -90,6 +90,7 @@ namespace GUI
             {
                 
                 modificar = true;
+                idCurso = dataGridView1.CurrentRow.Cells["idCurso"].Value.ToString();
                 txtNombre.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
                 cbbMaestro.SelectedValue = int.Parse(dataGridView1.CurrentRow.Cells["idMaestro"].Value.ToString());
             }

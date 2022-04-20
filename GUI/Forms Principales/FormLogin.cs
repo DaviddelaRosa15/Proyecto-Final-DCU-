@@ -126,8 +126,6 @@ namespace GUI
                                 maestro.FormClosed += cerrarSesion;
                                 break;
                         }
-                        //mainMenu.Show();
-                        //mainMenu.FormClosed += cerrarSesion;
                         this.Hide();
                     }
                     else

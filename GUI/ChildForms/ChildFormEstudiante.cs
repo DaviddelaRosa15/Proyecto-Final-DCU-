@@ -103,6 +103,7 @@ namespace GUI
                 txtNombre.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtApellido.Text = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
                 txtEdad.Text = dataGridView1.CurrentRow.Cells["Edad"].Value.ToString();
+                txtMatricula.Text = dataGridView1.CurrentRow.Cells["Matricula"].Value.ToString();
                 txtTelefono.Text = dataGridView1.CurrentRow.Cells["Telefono"].Value.ToString();
                 txtDireccion.Text = dataGridView1.CurrentRow.Cells["Direccion"].Value.ToString();
                 txtEmail.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
