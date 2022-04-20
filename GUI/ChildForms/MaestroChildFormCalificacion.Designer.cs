@@ -112,7 +112,7 @@ namespace GUI
             this.lblCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblCurso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurso.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblCurso.Location = new System.Drawing.Point(79, 153);
+            this.lblCurso.Location = new System.Drawing.Point(68, 153);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(77, 19);
             this.lblCurso.TabIndex = 21;
@@ -124,7 +124,7 @@ namespace GUI
             this.lblMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblMatricula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMatricula.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMatricula.Location = new System.Drawing.Point(79, 96);
+            this.lblMatricula.Location = new System.Drawing.Point(68, 96);
             this.lblMatricula.Name = "lblMatricula";
             this.lblMatricula.Size = new System.Drawing.Size(77, 19);
             this.lblMatricula.TabIndex = 20;
@@ -136,7 +136,7 @@ namespace GUI
             this.lblNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblNombre.Location = new System.Drawing.Point(79, 39);
+            this.lblNombre.Location = new System.Drawing.Point(68, 39);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(77, 19);
             this.lblNombre.TabIndex = 19;
