@@ -85,6 +85,12 @@
     <Compile Include="ChildForms\ChildFormMaestro.Designer.cs">
       <DependentUpon>ChildFormMaestro.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChildForms\EstudianteChildFormCalificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\EstudianteChildFormCalificacion.Designer.cs">
+      <DependentUpon>EstudianteChildFormCalificacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildForms\MaestroChildFormCalificacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\ChildFormMaestro.resx">
       <DependentUpon>ChildFormMaestro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\EstudianteChildFormCalificacion.resx">
+      <DependentUpon>EstudianteChildFormCalificacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\MaestroChildFormCalificacion.resx">
       <DependentUpon>MaestroChildFormCalificacion.cs</DependentUpon>

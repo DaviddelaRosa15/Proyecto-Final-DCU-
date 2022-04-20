@@ -29,14 +29,14 @@ namespace GUI
 
         private void mostrarCalificaciones()
         {
-            dataGridView1.DataSource = dominio.mostrarCalificaciones(1); ;
+            dataGridView1.DataSource = dominio.mostrarCalificaciones(UserCache.id); ;
         }
 
         private void txtCalificacion_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Convert.ToInt32(e.KeyChar) == 13)
             {
-                //btnlogin_Click(sender, e);
+                btnSave_Click(sender, e);
             }
         }
 
@@ -52,6 +52,9 @@ namespace GUI
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
+                lblNombre.Visible = true;
+                lblMatricula.Visible = true;
+                lblCurso.Visible = true;
                 idCalificacion = dataGridView1.CurrentRow.Cells["idCalificacion"].Value.ToString();
                 lblNombre.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
                 lblMatricula.Text = dataGridView1.CurrentRow.Cells["Matricula"].Value.ToString();
@@ -70,7 +73,10 @@ namespace GUI
                     MessageBox.Show("¡Se modificó correctamente!");
                     mostrarCalificaciones();
                     clearForm();
-                }
+                    lblNombre.Visible = false;
+                    lblMatricula.Visible = false;
+                    lblCurso.Visible = false;
+            }
                 catch (Exception ex)
                 {
                     MessageBox.Show("No se pudieron editar los datos por: " + ex);

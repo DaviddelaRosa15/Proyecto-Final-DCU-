@@ -105,6 +105,7 @@ namespace GUI
         private void ibtnCalificaciones_Click(object sender, EventArgs e)
         {
             activarBoton(sender, colores.color5);
+            OpenChildForm(new EstudianteChildFormCalificacion());
         }
 
         private void btnInicio_Click(object sender, EventArgs e)

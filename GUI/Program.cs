@@ -32,7 +32,7 @@ namespace GUI
                 Application.Run(new FormSplashForm());
                 Application.Run(new FormDirector());
             }
-            //Application.Run(new MaestroChildFormCalificacion());
+            //Application.Run(new EstudianteChildFormCalificacion());
         }
     }
 }

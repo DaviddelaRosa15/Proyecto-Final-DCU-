@@ -117,6 +117,7 @@ namespace GUI
             this.lblCurso.Size = new System.Drawing.Size(77, 19);
             this.lblCurso.TabIndex = 21;
             this.lblCurso.Text = "Nombre:";
+            this.lblCurso.Visible = false;
             // 
             // lblMatricula
             // 
@@ -129,6 +130,7 @@ namespace GUI
             this.lblMatricula.Size = new System.Drawing.Size(77, 19);
             this.lblMatricula.TabIndex = 20;
             this.lblMatricula.Text = "Nombre:";
+            this.lblMatricula.Visible = false;
             // 
             // lblNombre
             // 
@@ -141,6 +143,7 @@ namespace GUI
             this.lblNombre.Size = new System.Drawing.Size(77, 19);
             this.lblNombre.TabIndex = 19;
             this.lblNombre.Text = "Nombre:";
+            this.lblNombre.Visible = false;
             // 
             // btnSave
             // 
