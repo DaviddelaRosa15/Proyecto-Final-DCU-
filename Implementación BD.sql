@@ -408,9 +408,11 @@ insert into cursos values ('Electricidad II', 1)
 insert into Maestros values ('Trinidad','Perez',50,'8092709772','Brisas del Este, ddssk,ss','trinidadz12@gmail.com','tri','trrr4422')
 insert into Directores values ('David N.','de la Rosa L.',50,'8092788772','Brisas del Este, Callae Santiago,#81','delarosadavid377@gmail.com','david15','ddl#1508')
 update Calificaciones set notaFinal = 96 where idEstudiante = 4;
+update Estudiantes set Matricula = '2020-12987' where idEstudiante = 4;
 select * FROM Cursos;
 select * from Maestros;
 select * from Estudiantes;
+select * from Calificaciones;
 GO
 exec spCursosMaestros 1;
 exec spCalificacionesEstudiantes 4;
