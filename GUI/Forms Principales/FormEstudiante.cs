@@ -186,6 +186,7 @@ namespace GUI
         private void ibtnAyuda_Click(object sender, EventArgs e)
         {
             activarBoton(sender, colores.color6);
+            OpenChildForm(new FormDocumentacion());
         }
     }
 }

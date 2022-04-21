@@ -113,7 +113,7 @@
             this.ibtnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.ibtnAyuda.Size = new System.Drawing.Size(220, 60);
             this.ibtnAyuda.TabIndex = 6;
-            this.ibtnAyuda.Text = "Ayuda";
+            this.ibtnAyuda.Text = "Documentación";
             this.ibtnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibtnAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnAyuda.UseVisualStyleBackColor = true;

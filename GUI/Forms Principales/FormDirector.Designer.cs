@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.ibtnAyuda = new FontAwesome.Sharp.IconButton();
             this.ibtnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.ibtnCursos = new FontAwesome.Sharp.IconButton();
             this.ibtnEstudiantes = new FontAwesome.Sharp.IconButton();
@@ -49,7 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tmFechayHora = new System.Windows.Forms.Timer(this.components);
-            this.ibtnAyuda = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
@@ -74,6 +74,29 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 670);
             this.panelMenu.TabIndex = 0;
+            // 
+            // ibtnAyuda
+            // 
+            this.ibtnAyuda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnAyuda.FlatAppearance.BorderSize = 0;
+            this.ibtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnAyuda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnAyuda.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ibtnAyuda.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
+            this.ibtnAyuda.IconColor = System.Drawing.Color.Gainsboro;
+            this.ibtnAyuda.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnAyuda.IconSize = 32;
+            this.ibtnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnAyuda.Location = new System.Drawing.Point(0, 380);
+            this.ibtnAyuda.Name = "ibtnAyuda";
+            this.ibtnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ibtnAyuda.Size = new System.Drawing.Size(220, 60);
+            this.ibtnAyuda.TabIndex = 9;
+            this.ibtnAyuda.Text = "Documentación";
+            this.ibtnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnAyuda.UseVisualStyleBackColor = true;
+            this.ibtnAyuda.Click += new System.EventHandler(this.ibtnAyuda_Click);
             // 
             // ibtnCerrarSesion
             // 
@@ -356,29 +379,6 @@
             // 
             this.tmFechayHora.Enabled = true;
             this.tmFechayHora.Tick += new System.EventHandler(this.tmFechayHora_Tick);
-            // 
-            // ibtnAyuda
-            // 
-            this.ibtnAyuda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnAyuda.FlatAppearance.BorderSize = 0;
-            this.ibtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnAyuda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnAyuda.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ibtnAyuda.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
-            this.ibtnAyuda.IconColor = System.Drawing.Color.Gainsboro;
-            this.ibtnAyuda.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnAyuda.IconSize = 32;
-            this.ibtnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnAyuda.Location = new System.Drawing.Point(0, 380);
-            this.ibtnAyuda.Name = "ibtnAyuda";
-            this.ibtnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.ibtnAyuda.Size = new System.Drawing.Size(220, 60);
-            this.ibtnAyuda.TabIndex = 9;
-            this.ibtnAyuda.Text = "Ayuda";
-            this.ibtnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnAyuda.UseVisualStyleBackColor = true;
-            this.ibtnAyuda.Click += new System.EventHandler(this.ibtnAyuda_Click);
             // 
             // FormDirector
             // 
