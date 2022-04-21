@@ -100,6 +100,7 @@ namespace GUI
         private void ibtnPerfil_Click(object sender, EventArgs e)
         {
             activarBoton(sender, colores.color1);
+            OpenChildForm(new FormPerfil());
         }     
 
         private void ibtnCursos_Click(object sender, EventArgs e)

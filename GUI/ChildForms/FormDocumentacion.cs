@@ -23,19 +23,9 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void FormAyuda_Load(object sender, EventArgs e)
+        private void FormDocumentacion_Load(object sender, EventArgs e)
         {
-            //string resultado = "";
-            //var assembly = Assembly.GetExecutingAssembly();
-            //var resourceName = "GUI.sample.txt";
-            //Stream stream = assembly.GetManifestResourceStream(resourceName);
-            //StreamReader reader = new StreamReader(stream);
-            //resultado = reader.ReadToEnd();
-
             richTextBox1.Text = Resources.Recursos.Documentación;
-            //Assembly assembly = Assembly.GetExecutingAssembly();
-            //StreamReader reader = new StreamReader(assembly.GetManifestResourceStream("GUI.sample.txt"));
-            //richTextBox1.Text = reader.ReadToEnd();
         }
     }
     

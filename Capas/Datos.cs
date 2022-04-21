@@ -65,6 +65,7 @@ namespace Capas
                         UserCache.id = drMaestro.GetInt32(0);
                         UserCache.nombre = drMaestro.GetString(1);
                         UserCache.apellido = drMaestro.GetString(2);
+                        UserCache.matricula = "";
                         UserCache.edad = Convert.ToString(drMaestro.GetInt32(3));
                         UserCache.telefono = drMaestro.GetString(4);
                         UserCache.direccion = drMaestro.GetString(5);
@@ -86,6 +87,7 @@ namespace Capas
                         UserCache.id = drDirector.GetInt32(0);
                         UserCache.nombre = drDirector.GetString(1);
                         UserCache.apellido = drDirector.GetString(2);
+                        UserCache.matricula = "";
                         UserCache.edad = Convert.ToString(drDirector.GetInt32(3));
                         UserCache.telefono = drDirector.GetString(4);
                         UserCache.direccion = drDirector.GetString(5);

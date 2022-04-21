@@ -107,6 +107,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FormDocumentacion.resx</DependentUpon>
     </Compile>
+    <Compile Include="ChildForms\FormPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\FormPerfil.Designer.cs">
+      <DependentUpon>FormPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildForms\MaestroChildFormCalificacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Recursos.resx</DependentUpon>
     </Compile>
+    <Compile Include="RJCircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="ChildForms\ChildFormCurso.resx">
       <DependentUpon>ChildFormCurso.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +183,9 @@
       <DependentUpon>FormDocumentacion.cs</DependentUpon>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FormDocumentacion1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\FormPerfil.resx">
+      <DependentUpon>FormPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\MaestroChildFormCalificacion.resx">
       <DependentUpon>MaestroChildFormCalificacion.cs</DependentUpon>

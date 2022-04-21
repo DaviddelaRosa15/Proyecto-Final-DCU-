@@ -54,7 +54,7 @@ namespace GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDocumentacion";
             this.Text = "Documentación";
-            this.Load += new System.EventHandler(this.FormAyuda_Load);
+            this.Load += new System.EventHandler(this.FormDocumentacion_Load);
             this.ResumeLayout(false);
 
         }
