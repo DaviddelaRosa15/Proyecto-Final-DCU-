@@ -8,3 +8,5 @@ El programa tiene cuatro fases:
 2da: Pantalla de bienvenida(splashform)
 3era: Pantalla principal(esta es diferente dependiendo el tipo de usuario en sesión)
 4ta: Pantallas secundarias(childForms, como las llamo en el proyecto)
+
+![image](https://user-images.githubusercontent.com/89267615/164789927-c9717f97-bdf3-4399-8b8e-169760d25e0e.png)
