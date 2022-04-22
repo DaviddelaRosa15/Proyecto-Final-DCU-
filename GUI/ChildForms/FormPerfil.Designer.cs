@@ -34,6 +34,8 @@ namespace GUI
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnImage = new System.Windows.Forms.Button();
+            this.fotoPerfil = new GUI.RJCircularPictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -43,8 +45,6 @@ namespace GUI
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.fotoPerfil = new GUI.RJCircularPictureBox();
-            this.btnImage = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fotoPerfil)).BeginInit();
@@ -98,6 +98,36 @@ namespace GUI
             this.panel1.Size = new System.Drawing.Size(406, 580);
             this.panel1.TabIndex = 24;
             // 
+            // btnImage
+            // 
+            this.btnImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnImage.FlatAppearance.BorderSize = 0;
+            this.btnImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImage.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnImage.Location = new System.Drawing.Point(137, 446);
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(135, 28);
+            this.btnImage.TabIndex = 1;
+            this.btnImage.Text = "Cargar Imagen...";
+            this.btnImage.UseVisualStyleBackColor = false;
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
+            // 
+            // fotoPerfil
+            // 
+            this.fotoPerfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.fotoPerfil.BorderColor = System.Drawing.Color.Indigo;
+            this.fotoPerfil.BorderColor2 = System.Drawing.Color.HotPink;
+            this.fotoPerfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.fotoPerfil.BorderSize = 5;
+            this.fotoPerfil.GradientAngle = 50F;
+            this.fotoPerfil.Location = new System.Drawing.Point(23, 82);
+            this.fotoPerfil.Name = "fotoPerfil";
+            this.fotoPerfil.Size = new System.Drawing.Size(358, 358);
+            this.fotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fotoPerfil.TabIndex = 0;
+            this.fotoPerfil.TabStop = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -140,7 +170,7 @@ namespace GUI
             this.lblNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblNombre.Location = new System.Drawing.Point(576, 30);
+            this.lblNombre.Location = new System.Drawing.Point(570, 30);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(0, 19);
             this.lblNombre.TabIndex = 29;
@@ -151,7 +181,7 @@ namespace GUI
             this.lblEdad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblEdad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEdad.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblEdad.Location = new System.Drawing.Point(472, 126);
+            this.lblEdad.Location = new System.Drawing.Point(466, 126);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(0, 19);
             this.lblEdad.TabIndex = 30;
@@ -162,7 +192,7 @@ namespace GUI
             this.lblMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblMatricula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMatricula.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMatricula.Location = new System.Drawing.Point(753, 82);
+            this.lblMatricula.Location = new System.Drawing.Point(747, 82);
             this.lblMatricula.Name = "lblMatricula";
             this.lblMatricula.Size = new System.Drawing.Size(0, 19);
             this.lblMatricula.TabIndex = 31;
@@ -173,7 +203,7 @@ namespace GUI
             this.lblTelefono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTelefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTelefono.Location = new System.Drawing.Point(745, 183);
+            this.lblTelefono.Location = new System.Drawing.Point(739, 183);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(0, 19);
             this.lblTelefono.TabIndex = 32;
@@ -184,7 +214,7 @@ namespace GUI
             this.lblDireccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDireccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDireccion.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblDireccion.Location = new System.Drawing.Point(505, 240);
+            this.lblDireccion.Location = new System.Drawing.Point(499, 240);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(0, 19);
             this.lblDireccion.TabIndex = 33;
@@ -195,40 +225,10 @@ namespace GUI
             this.lblEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblEmail.Location = new System.Drawing.Point(723, 313);
+            this.lblEmail.Location = new System.Drawing.Point(717, 313);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(0, 19);
             this.lblEmail.TabIndex = 34;
-            // 
-            // fotoPerfil
-            // 
-            this.fotoPerfil.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.fotoPerfil.BorderColor = System.Drawing.Color.Indigo;
-            this.fotoPerfil.BorderColor2 = System.Drawing.Color.HotPink;
-            this.fotoPerfil.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.fotoPerfil.BorderSize = 5;
-            this.fotoPerfil.GradientAngle = 50F;
-            this.fotoPerfil.Location = new System.Drawing.Point(23, 82);
-            this.fotoPerfil.Name = "fotoPerfil";
-            this.fotoPerfil.Size = new System.Drawing.Size(358, 358);
-            this.fotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.fotoPerfil.TabIndex = 0;
-            this.fotoPerfil.TabStop = false;
-            // 
-            // btnImage
-            // 
-            this.btnImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnImage.FlatAppearance.BorderSize = 0;
-            this.btnImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImage.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnImage.Location = new System.Drawing.Point(137, 446);
-            this.btnImage.Name = "btnImage";
-            this.btnImage.Size = new System.Drawing.Size(135, 28);
-            this.btnImage.TabIndex = 1;
-            this.btnImage.Text = "Cargar Imagen...";
-            this.btnImage.UseVisualStyleBackColor = false;
-            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // openFileDialog1
             // 

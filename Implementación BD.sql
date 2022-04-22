@@ -141,11 +141,11 @@ END
 GO
 
 CREATE PROCEDURE SpEstudiantesEliminar
-@Usuario AS VARCHAR(50)
+@idEstudiante AS INT
 AS
 BEGIN
 DELETE FROM Estudiantes
-WHERE Usuario = @Usuario
+WHERE idEstudiante = @idEstudiante
 END
 GO
 CREATE PROCEDURE SpEstudiantesListar
@@ -208,11 +208,11 @@ END
 GO
 
 CREATE PROCEDURE SpMaestrosEliminar
-@Usuario AS VARCHAR(50)
+@idMaestro AS INT
 AS
 BEGIN
 DELETE FROM Maestros
-WHERE Usuario = @Usuario
+WHERE idMaestro = @idMaestro
 END
 GO
 
@@ -398,19 +398,21 @@ Declare cDatos cursor for
 END
 GO
 --- Pruebas
-Insert into Estudiantes values ('Maria','Alvarez',23,'2020-1111','8092237744','briisisiss','maraa@hotmail.com','MAR22','mmmm2234',1)
-Insert into Estudiantes values ('Marco','Madrigal',24,'2020-15412','8292437984','Los Frailes','marco@gmail.com','marco14','mm322234',2)
+Insert into Estudiantes values ('Mon','Alvarez',26,'20211921','8092117544','brisal II','monAlvarez@hotmail.com','Mon29','mon2234',8)
+Insert into Estudiantes values ('Marco','Madrigal',24,'202015412','8292437984','Los Frailes','marco@gmail.com','marco14','mm322234',2)
 insert into Maestros values ('Juan','Lopez',40,'8092789772','Brisas del Este, skskk,ss','juanlopez12@gmail.com','jlopez','jjjj2222')
 insert into cursos values ('Electricidad básica', 1)
 insert into cursos values ('Electricidad II', 1)
 insert into Maestros values ('Trinidad','Perez',50,'8092709772','Brisas del Este, ddssk,ss','trinidadz12@gmail.com','tri','trrr4422')
 insert into Directores values ('David N.','de la Rosa L.',50,'8092788772','Brisas del Este, Callae Santiago,#81','delarosadavid377@gmail.com','david15','ddl#1508')
 update Calificaciones set notaFinal = 96 where idEstudiante = 4;
-update Estudiantes set Matricula = '2020-12987' where idEstudiante = 4;
+update Estudiantes set Matricula = '20211921' where idEstudiante = 15;
+update Maestros set Telefono = '8092225789' where idMaestro = 4;
 select * FROM Cursos;
 select * from Maestros;
 select * from Estudiantes;
 select * from Calificaciones;
+select * from Directores;
 GO
 exec spCursosMaestros 1;
 exec spCalificacionesEstudiantes 4;

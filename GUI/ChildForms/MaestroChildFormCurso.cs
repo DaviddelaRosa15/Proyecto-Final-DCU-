@@ -27,7 +27,7 @@ namespace GUI
 
         private void mostrarCursos()
         {
-            dataGridView1.DataSource = dominio.mostrarCursosMaestros(UserCache.id); ;
+            dataGridView1.DataSource = dominio.mostrarCursosMaestros(UserCache.id);
         }
 
     }

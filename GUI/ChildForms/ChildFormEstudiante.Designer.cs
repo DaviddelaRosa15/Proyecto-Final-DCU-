@@ -33,6 +33,7 @@ namespace GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblEstado = new System.Windows.Forms.Label();
             this.cbbCurso = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -89,6 +90,7 @@ namespace GUI
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblEstado);
             this.panel2.Controls.Add(this.cbbCurso);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label4);
@@ -116,6 +118,16 @@ namespace GUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(296, 372);
             this.panel2.TabIndex = 4;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(13, 285);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(270, 23);
+            this.lblEstado.TabIndex = 23;
+            this.lblEstado.Visible = false;
             // 
             // cbbCurso
             // 
@@ -154,6 +166,7 @@ namespace GUI
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(189, 20);
             this.txtMatricula.TabIndex = 19;
+            this.txtMatricula.Text = "0000-00000";
             // 
             // btnDelete
             // 
@@ -161,7 +174,7 @@ namespace GUI
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDelete.Location = new System.Drawing.Point(109, 293);
+            this.btnDelete.Location = new System.Drawing.Point(109, 317);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(79, 37);
             this.btnDelete.TabIndex = 1;
@@ -175,7 +188,7 @@ namespace GUI
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSave.Location = new System.Drawing.Point(204, 293);
+            this.btnSave.Location = new System.Drawing.Point(204, 317);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 37);
             this.btnSave.TabIndex = 18;
@@ -189,7 +202,7 @@ namespace GUI
             this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModify.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModify.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnModify.Location = new System.Drawing.Point(13, 293);
+            this.btnModify.Location = new System.Drawing.Point(13, 317);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(78, 37);
             this.btnModify.TabIndex = 0;
@@ -275,6 +288,7 @@ namespace GUI
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(189, 20);
             this.txtTelefono.TabIndex = 9;
+            this.txtTelefono.Text = "(000)-000-0000";
             // 
             // label5
             // 
@@ -387,6 +401,7 @@ namespace GUI
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.ComboBox cbbCurso;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblEstado;
     }
 }
 

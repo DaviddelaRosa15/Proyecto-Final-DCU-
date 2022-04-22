@@ -163,6 +163,10 @@ namespace Capas
             string telefono, string direccion, string email, string usuario, string contraseña, int idCurso)
         {
             comando.Connection = abrirConexion();
+            //comando.CommandText = "INSERT INTO Estudiantes (Nombre,Apellido,Edad,Matricula,Telefono,Direccion,email,Usuario,Contraseña,Curso)" +
+            //"VALUES("+ nombre + "," + apellido + ","+ edad + "," + matricula + "," + telefono + "," + direccion + "," + email + "," +
+            //usuario + "," + contraseña + "," + idCurso + ")";
+            //comando.CommandType = CommandType.Text;
             comando.CommandText = "SpEstudiantesInsertar";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@Nombre", nombre);

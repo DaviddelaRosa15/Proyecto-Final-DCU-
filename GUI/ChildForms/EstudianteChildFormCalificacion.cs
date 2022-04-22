@@ -27,7 +27,7 @@ namespace GUI
 
         private void mostrarCalificaciones()
         {
-            dataGridView1.DataSource = dominio.mostrarCalificacionEstudiante(UserCache.id); ;
+            dataGridView1.DataSource = dominio.mostrarCalificacionEstudiante(UserCache.id);
         }
 
     }

@@ -25,17 +25,13 @@ namespace GUI
 
         private void ChildFormMaestro_Load(object sender, EventArgs e)
         {
-            mostrarEventos();
+            mostrarMaestros();
+            lblEstado.Visible = false;
         }
 
-        private void descargarDataGrid()
+        private void mostrarMaestros()
         {
-            dataGridView1 = new DataGridView();
-        }
-
-        private void mostrarEventos()
-        {
-            dataGridView1.DataSource = dominio.mostrarMaestros(); ;
+            dataGridView1.DataSource = dominio.mostrarMaestros();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -46,15 +42,18 @@ namespace GUI
                 try
                 {
                     dominio.insertarMaestros(txtNombre.Text, txtApellido.Text, int.Parse(txtEdad.Text), 
-                        txtTelefono.Text, txtDireccion.Text, txtEmail.Text, txtUsuario.Text, txtContraseña.Text);
-                    MessageBox.Show("¡Se insertó correctamente!");
-                    descargarDataGrid();
-                    mostrarEventos();
+                        Presentación.sinFormatoTelefono(txtTelefono.Text), txtDireccion.Text, txtEmail.Text, txtUsuario.Text, txtContraseña.Text);
+                    lblEstado.Text = "Se insertó correctamente....";
+                    lblEstado.ForeColor = Color.White;
+                    lblEstado.Visible = true;
+                    mostrarMaestros();
                     clearForm();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudieron insertar los datos por: " + ex);
+                    lblEstado.Text = "Revise sus datos....";
+                    lblEstado.ForeColor = Color.Red;
+                    lblEstado.Visible = true;
                 }
             }
             //EDITAR
@@ -63,16 +62,19 @@ namespace GUI
                 try
                 {
                     dominio.actualizarMaestros(int.Parse(idMaestro), txtNombre.Text, txtApellido.Text, int.Parse(txtEdad.Text),
-                        txtTelefono.Text, txtDireccion.Text, txtEmail.Text, txtUsuario.Text, txtContraseña.Text);
-                    MessageBox.Show("¡Se modificó correctamente!");
-                    descargarDataGrid();
-                    mostrarEventos();
+                        Presentación.sinFormatoTelefono(txtTelefono.Text), txtDireccion.Text, txtEmail.Text, txtUsuario.Text, txtContraseña.Text);
+                    lblEstado.Text = "Se modificó correctamente....";
+                    lblEstado.ForeColor = Color.White;
+                    lblEstado.Visible = true;
+                    mostrarMaestros();
                     clearForm();
                     modificar = false;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudieron editar los datos por: " + ex);
+                    lblEstado.Text = "Revise sus datos....";
+                    lblEstado.ForeColor = Color.Red;
+                    lblEstado.Visible = true;
                 }
             }
         }
@@ -85,7 +87,7 @@ namespace GUI
             txtNombre.Clear();
             txtApellido.Clear();
             txtEdad.Clear();
-            txtTelefono.Clear();
+            txtTelefono.Text = "(000)-000-0000";
             txtDireccion.Clear();
             txtEmail.Clear();
             txtUsuario.Clear();
@@ -101,7 +103,8 @@ namespace GUI
                 txtNombre.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtApellido.Text = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
                 txtEdad.Text = dataGridView1.CurrentRow.Cells["Edad"].Value.ToString();
-                txtTelefono.Text = dataGridView1.CurrentRow.Cells["Telefono"].Value.ToString();
+                string telefono = dataGridView1.CurrentRow.Cells["Telefono"].Value.ToString();
+                txtTelefono.Text = Presentación.formatoTelefono(telefono);
                 txtDireccion.Text = dataGridView1.CurrentRow.Cells["Direccion"].Value.ToString();
                 txtEmail.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
                 txtUsuario.Text = dataGridView1.CurrentRow.Cells["Usuario"].Value.ToString();
@@ -109,7 +112,11 @@ namespace GUI
                 idMaestro = dataGridView1.CurrentRow.Cells["idMaestro"].Value.ToString();
             }
             else
-                MessageBox.Show("Seleccione un evento. Por favor");
+            {
+                lblEstado.Text = "Seleccione una fila, por favor....";
+                lblEstado.ForeColor = Color.Red;
+                lblEstado.Visible = true;
+            }     
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -122,14 +129,18 @@ namespace GUI
                 if (result == DialogResult.Yes)
                 {
                     dominio.eliminarMaestros(int.Parse(idMaestro));
-                    MessageBox.Show("Eliminado correctamente");
-                    descargarDataGrid();
-                    mostrarEventos();
+                    lblEstado.Text = "Eliminado correctamente....";
+                    lblEstado.ForeColor = Color.White;
+                    mostrarMaestros();
                 }
-                //mostrarEventos();
+                //mostrarMaestros();
             }
             else
-                MessageBox.Show("seleccione una fila por favor");
+            {
+                lblEstado.Text = "Seleccione una fila, por favor....";
+                lblEstado.ForeColor = Color.Red;
+                lblEstado.Visible = true;
+            }                
         }
     }
     

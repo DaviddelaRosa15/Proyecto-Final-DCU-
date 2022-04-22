@@ -216,6 +216,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -245,6 +246,21 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Recursos.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maestro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cali.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user-free-social-icons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-box-important-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

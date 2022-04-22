@@ -43,6 +43,7 @@ namespace GUI
             this.label3 = new System.Windows.Forms.Label();
             this.Matricula = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +80,7 @@ namespace GUI
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblEstado);
             this.panel2.Controls.Add(this.txtCalificacion);
             this.panel2.Controls.Add(this.lblCurso);
             this.panel2.Controls.Add(this.lblMatricula);
@@ -91,7 +93,7 @@ namespace GUI
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(679, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(296, 301);
+            this.panel2.Size = new System.Drawing.Size(296, 329);
             this.panel2.TabIndex = 5;
             // 
             // txtCalificacion
@@ -151,7 +153,7 @@ namespace GUI
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSave.Location = new System.Drawing.Point(164, 252);
+            this.btnSave.Location = new System.Drawing.Point(166, 277);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 37);
             this.btnSave.TabIndex = 18;
@@ -165,7 +167,7 @@ namespace GUI
             this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModify.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModify.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnModify.Location = new System.Drawing.Point(56, 252);
+            this.btnModify.Location = new System.Drawing.Point(58, 277);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(78, 37);
             this.btnModify.TabIndex = 0;
@@ -221,6 +223,17 @@ namespace GUI
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
+            // lblEstado
+            // 
+            this.lblEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(18, 240);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(271, 23);
+            this.lblEstado.TabIndex = 25;
+            this.lblEstado.Text = "label11";
+            this.lblEstado.Visible = false;
+            // 
             // MaestroChildFormCalificacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +267,7 @@ namespace GUI
         private System.Windows.Forms.Label lblMatricula;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtCalificacion;
+        private System.Windows.Forms.Label lblEstado;
     }
 }
 

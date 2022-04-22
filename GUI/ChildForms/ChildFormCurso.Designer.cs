@@ -40,6 +40,7 @@ namespace GUI
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +77,7 @@ namespace GUI
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblEstado);
             this.panel2.Controls.Add(this.cbbMaestro);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnSave);
@@ -85,7 +87,7 @@ namespace GUI
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(631, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(344, 146);
+            this.panel2.Size = new System.Drawing.Size(344, 160);
             this.panel2.TabIndex = 4;
             // 
             // cbbMaestro
@@ -102,7 +104,7 @@ namespace GUI
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDelete.Location = new System.Drawing.Point(133, 81);
+            this.btnDelete.Location = new System.Drawing.Point(133, 110);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(79, 37);
             this.btnDelete.TabIndex = 1;
@@ -116,7 +118,7 @@ namespace GUI
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSave.Location = new System.Drawing.Point(239, 81);
+            this.btnSave.Location = new System.Drawing.Point(239, 110);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 37);
             this.btnSave.TabIndex = 18;
@@ -130,7 +132,7 @@ namespace GUI
             this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModify.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModify.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnModify.Location = new System.Drawing.Point(29, 81);
+            this.btnModify.Location = new System.Drawing.Point(29, 110);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(78, 37);
             this.btnModify.TabIndex = 0;
@@ -167,6 +169,16 @@ namespace GUI
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
+            // lblEstado
+            // 
+            this.lblEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(12, 75);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(325, 23);
+            this.lblEstado.TabIndex = 24;
+            this.lblEstado.Visible = false;
+            // 
             // ChildFormCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +209,7 @@ namespace GUI
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbMaestro;
+        private System.Windows.Forms.Label lblEstado;
     }
 }
 

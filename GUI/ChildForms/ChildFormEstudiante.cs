@@ -26,18 +26,14 @@ namespace GUI
 
         private void ChildFormEstudiante_Load(object sender, EventArgs e)
         {
-            mostrarEventos();
+            mostrarEstudiantes();
             cargarCursos();
+            lblEstado.Visible = false;
         }
 
-        private void descargarDataGrid()
+        private void mostrarEstudiantes()
         {
-            dataGridView1 = new DataGridView();
-        }
-
-        private void mostrarEventos()
-        {
-            dataGridView1.DataSource = dominio.mostrarEstudiantes(); ;
+            dataGridView1.DataSource = dominio.mostrarEstudiantes();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -47,16 +43,19 @@ namespace GUI
             {
                 try
                 {
-                    dominio.insertarEstudiantes(txtNombre.Text, txtApellido.Text, int.Parse(txtEdad.Text), txtMatricula.Text, 
-                        txtTelefono.Text, txtDireccion.Text, txtEmail.Text, txtUsuario.Text, txtContraseña.Text, int.Parse(cbbCurso.SelectedIndex.ToString()));
-                    MessageBox.Show("¡Se insertó correctamente!");
-                    descargarDataGrid();
-                    mostrarEventos();
+                    dominio.insertarEstudiantes(txtNombre.Text, txtApellido.Text, int.Parse(txtEdad.Text), Presentación.sinFormatoMatricula(txtMatricula.Text), 
+                        Presentación.sinFormatoTelefono(txtTelefono.Text), txtDireccion.Text, txtEmail.Text, txtUsuario.Text, txtContraseña.Text, int.Parse(cbbCurso.SelectedValue.ToString()));
+                    lblEstado.Text = "¡Se insertó correctamente!....";
+                    lblEstado.ForeColor = Color.White;
+                    lblEstado.Visible = true;
+                    mostrarEstudiantes();
                     clearForm();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudieron insertar los datos por: " + ex);
+                    lblEstado.Text = "Revise sus datos....";
+                    lblEstado.ForeColor = Color.Red;
+                    lblEstado.Visible = true;
                 }
             }
             //EDITAR
@@ -64,17 +63,20 @@ namespace GUI
             {
                 try
                 {
-                    dominio.actualizarEstudiantes(int.Parse(idEstudiante), txtNombre.Text, txtApellido.Text, int.Parse(txtEdad.Text), txtMatricula.Text,
-                        txtTelefono.Text, txtDireccion.Text, txtEmail.Text, txtUsuario.Text, txtContraseña.Text, int.Parse(cbbCurso.SelectedValue.ToString()));
-                    MessageBox.Show("¡Se modificó correctamente!");
-                    descargarDataGrid();
-                    mostrarEventos();
+                    dominio.actualizarEstudiantes(int.Parse(idEstudiante), txtNombre.Text, txtApellido.Text, int.Parse(txtEdad.Text), Presentación.sinFormatoMatricula(txtMatricula.Text),
+                        Presentación.sinFormatoTelefono(txtTelefono.Text), txtDireccion.Text, txtEmail.Text, txtUsuario.Text, txtContraseña.Text, int.Parse(cbbCurso.SelectedValue.ToString()));
+                    lblEstado.Text = "¡Se modificó correctamente!....";
+                    lblEstado.ForeColor = Color.White;
+                    lblEstado.Visible = true;
+                    mostrarEstudiantes();
                     clearForm();
                     modificar = false;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudieron editar los datos por: " + ex);
+                    lblEstado.Text = "Revise sus datos....";
+                    lblEstado.ForeColor = Color.Red;
+                    lblEstado.Visible = true;
                 }
             }
         }
@@ -86,8 +88,9 @@ namespace GUI
             txtNombre.Clear();
             txtNombre.Clear();
             txtApellido.Clear();
+            txtMatricula.Text = "0000-00000";
             txtEdad.Clear();
-            txtTelefono.Clear();
+            txtTelefono.Text = "(000)-000-0000";
             txtDireccion.Clear();
             txtEmail.Clear();
             txtUsuario.Clear();
@@ -103,8 +106,10 @@ namespace GUI
                 txtNombre.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtApellido.Text = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
                 txtEdad.Text = dataGridView1.CurrentRow.Cells["Edad"].Value.ToString();
-                txtMatricula.Text = dataGridView1.CurrentRow.Cells["Matricula"].Value.ToString();
-                txtTelefono.Text = dataGridView1.CurrentRow.Cells["Telefono"].Value.ToString();
+                string matricula = dataGridView1.CurrentRow.Cells["Matricula"].Value.ToString();
+                txtMatricula.Text = Presentación.formatoMatricula(matricula);
+                string telefono = dataGridView1.CurrentRow.Cells["Telefono"].Value.ToString();
+                txtTelefono.Text = Presentación.formatoTelefono(telefono);
                 txtDireccion.Text = dataGridView1.CurrentRow.Cells["Direccion"].Value.ToString();
                 txtEmail.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
                 txtUsuario.Text = dataGridView1.CurrentRow.Cells["Usuario"].Value.ToString();
@@ -113,7 +118,11 @@ namespace GUI
                 idEstudiante = dataGridView1.CurrentRow.Cells["idEstudiante"].Value.ToString();
             }
             else
-                MessageBox.Show("Seleccione una fila. Por favor");
+            {
+                lblEstado.Text = "Seleccione una fila. Por favor....";
+                lblEstado.ForeColor = Color.Red;
+                lblEstado.Visible = true;
+            }   
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -126,14 +135,19 @@ namespace GUI
                 if (result == DialogResult.Yes)
                 {
                     dominio.eliminarEstudiantes(int.Parse(idEstudiante));
-                    MessageBox.Show("Eliminado correctamente");
-                    descargarDataGrid();
-                    mostrarEventos();
+                    lblEstado.Text = "Eliminado correctamente....";
+                    lblEstado.ForeColor = Color.White;
+                    lblEstado.Visible = true;
+                    mostrarEstudiantes();
                 }
-                //mostrarEventos();
+                //mostrarEstudiantes();
             }
             else
-                MessageBox.Show("Seleccione una fila por favor");
+            {
+                lblEstado.Text = "Seleccione una fila, por favor....";
+                lblEstado.ForeColor = Color.Red;
+                lblEstado.Visible = true;
+            }                
         }
 
         private void cargarCursos()

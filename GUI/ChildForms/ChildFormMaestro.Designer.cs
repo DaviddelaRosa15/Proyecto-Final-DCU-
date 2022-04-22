@@ -33,6 +33,7 @@ namespace GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblEstado = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
@@ -85,6 +86,7 @@ namespace GUI
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblEstado);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.btnModify);
@@ -106,8 +108,18 @@ namespace GUI
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(679, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(296, 293);
+            this.panel2.Size = new System.Drawing.Size(296, 326);
             this.panel2.TabIndex = 4;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(9, 231);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(274, 23);
+            this.lblEstado.TabIndex = 24;
+            this.lblEstado.Visible = false;
             // 
             // btnDelete
             // 
@@ -115,7 +127,7 @@ namespace GUI
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDelete.Location = new System.Drawing.Point(108, 236);
+            this.btnDelete.Location = new System.Drawing.Point(108, 269);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(79, 37);
             this.btnDelete.TabIndex = 1;
@@ -129,7 +141,7 @@ namespace GUI
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSave.Location = new System.Drawing.Point(204, 236);
+            this.btnSave.Location = new System.Drawing.Point(204, 269);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 37);
             this.btnSave.TabIndex = 18;
@@ -143,7 +155,7 @@ namespace GUI
             this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModify.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModify.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnModify.Location = new System.Drawing.Point(13, 236);
+            this.btnModify.Location = new System.Drawing.Point(13, 269);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(78, 37);
             this.btnModify.TabIndex = 0;
@@ -229,6 +241,7 @@ namespace GUI
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(189, 20);
             this.txtTelefono.TabIndex = 9;
+            this.txtTelefono.Text = "(000)-000-0000";
             // 
             // label5
             // 
@@ -337,6 +350,7 @@ namespace GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEstado;
     }
 }
 

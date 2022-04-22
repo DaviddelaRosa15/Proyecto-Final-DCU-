@@ -26,18 +26,14 @@ namespace GUI
 
         private void ChildFormCurso_Load(object sender, EventArgs e)
         {
-            mostrarEventos();
+            mostrarCursos();
             cargarMaestros();
+            lblEstado.Visible = false;
         }
 
-        private void descargarDataGrid()
+        private void mostrarCursos()
         {
-            dataGridView1 = new DataGridView();
-        }
-
-        private void mostrarEventos()
-        {
-            dataGridView1.DataSource = dominio.mostrarCursos(); ;
+            dataGridView1.DataSource = dominio.mostrarCursos();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -48,14 +44,17 @@ namespace GUI
                 try
                 {
                     dominio.insertarCursos(txtNombre.Text, int.Parse(cbbMaestro.SelectedValue.ToString()));
-                    MessageBox.Show("¡Se insertó correctamente!");
-                    descargarDataGrid();
-                    mostrarEventos();
+                    lblEstado.Text = "Se insertó correctamente....";
+                    lblEstado.ForeColor = Color.White;
+                    lblEstado.Visible = true;                    
+                    mostrarCursos();
                     clearForm();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudieron insertar los datos por: " + ex);
+                    lblEstado.Text = "Revise sus datos....";
+                    lblEstado.ForeColor = Color.Red;
+                    lblEstado.Visible = true;
                 }
             }
             //EDITAR
@@ -64,15 +63,18 @@ namespace GUI
                 try
                 {
                     dominio.actualizarCursos(int.Parse(idCurso), txtNombre.Text, int.Parse(cbbMaestro.SelectedValue.ToString()));
-                    MessageBox.Show("¡Se modificó correctamente!");
-                    descargarDataGrid();
-                    mostrarEventos();
+                    lblEstado.Text = "Se modificó correctamente....";
+                    lblEstado.ForeColor = Color.White;
+                    lblEstado.Visible = true;                    
+                    mostrarCursos();
                     clearForm();
                     modificar = false;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudieron editar los datos por: " + ex);
+                    lblEstado.Text = "Revise sus datos....";
+                    lblEstado.ForeColor = Color.Red;
+                    lblEstado.Visible = true;
                 }
             }
         }
@@ -95,7 +97,11 @@ namespace GUI
                 cbbMaestro.SelectedValue = int.Parse(dataGridView1.CurrentRow.Cells["idMaestro"].Value.ToString());
             }
             else
-                MessageBox.Show("Seleccione una fila. Por favor");
+            {
+                lblEstado.Text = "Seleccione una fila, por favor....";
+                lblEstado.ForeColor = Color.Red;
+                lblEstado.Visible = true;
+            }                
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -108,14 +114,19 @@ namespace GUI
                 if (result == DialogResult.Yes)
                 {
                     dominio.eliminarCursos(int.Parse(idCurso));
-                    MessageBox.Show("Eliminado correctamente");
-                    descargarDataGrid();
-                    mostrarEventos();
+                    lblEstado.Text = "Eliminado correctamente....";
+                    lblEstado.ForeColor = Color.White;
+                    lblEstado.Visible = true;                    
+                    mostrarCursos();
                 }
-                //mostrarEventos();
+                //mostrarCursos();
             }
             else
-                MessageBox.Show("Seleccione una fila por favor");
+            {
+                lblEstado.Text = "Seleccione una fila, por favor....";
+                lblEstado.ForeColor = Color.Red;
+                lblEstado.Visible = true;
+            }                
         }
 
         private void cargarMaestros()

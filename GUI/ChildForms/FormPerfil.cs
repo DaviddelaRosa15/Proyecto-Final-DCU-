@@ -24,17 +24,19 @@ namespace GUI
 
         private void FormPerfil_Load(object sender, EventArgs e)
         {
-            lblNombre.Text = UserCache.nombre + "" + UserCache.apellido;
-            lblMatricula.Text = UserCache.matricula;
-            lblEdad.Text = Convert.ToString(UserCache.id);
+            lblNombre.Text = UserCache.nombre + " " + UserCache.apellido;
+            if (UserCache.tipo == "Estudiante")
+            {
+                lblMatricula.Text = Presentación.formatoMatricula(UserCache.matricula);
+            }
+            lblEdad.Text = Convert.ToString(UserCache.edad);
             lblDireccion.Text = UserCache.direccion;
-            lblTelefono.Text = UserCache.telefono;
+            lblTelefono.Text = Presentación.formatoTelefono(UserCache.telefono);
             lblEmail.Text = UserCache.email;
 
             if (UserCache.matricula == "")
             {
                 label2.Visible = false;
-                lblMatricula.Visible = true;
             }
         }
 
@@ -42,8 +44,6 @@ namespace GUI
         {
             OpenFileDialog abrir = new OpenFileDialog();
             abrir.Filter = "Imagen|*.jpg|Imagen|*.png|Imagen|*.jpeg|Todos los archivos|*.*";
-            //abrir.Filter = "Imagen|*.png";
-            //abrir.Filter = "Imagen|*.jpeg";
             if (abrir.ShowDialog() == DialogResult.OK)
             {
                 fotoPerfil.ImageLocation = abrir.FileName;

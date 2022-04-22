@@ -19,7 +19,7 @@ namespace GUI
         public MaestroChildFormCalificacion()
         {
             InitializeComponent();
-            txtCalificacion.Size = new System.Drawing.Size(100,30);
+            txtCalificacion.Size = new System.Drawing.Size(100, 30);
         }
 
         private void MaestroChildFormCalificacion_Load(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace GUI
 
         private void mostrarCalificaciones()
         {
-            dataGridView1.DataSource = dominio.mostrarCalificaciones(UserCache.id); ;
+            dataGridView1.DataSource = dominio.mostrarCalificaciones(UserCache.id);
         }
 
         private void txtCalificacion_KeyPress(object sender, KeyPressEventArgs e)
@@ -46,6 +46,9 @@ namespace GUI
             lblMatricula.Text = "";
             lblCurso.Text = "";
             txtCalificacion.Clear();
+            lblNombre.Visible = false;
+            lblMatricula.Visible = false;
+            lblCurso.Visible = false;
         }
 
         private void btnModify_Click(object sender, EventArgs e)
@@ -62,26 +65,31 @@ namespace GUI
                 txtCalificacion.Text = dataGridView1.CurrentRow.Cells["notaFinal"].Value.ToString();
             }
             else
-                MessageBox.Show("Seleccione una fila. Por favor");
+            {
+                lblEstado.Text = "Seleccione una fila, por favor....";
+                lblEstado.ForeColor = Color.Red;
+                lblEstado.Visible = true;
+            }                
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
-                {
-                    dominio.actualizarCalificaciones(int.Parse(idCalificacion), int.Parse(txtCalificacion.Text));
-                    MessageBox.Show("¡Se modificó correctamente!");
-                    mostrarCalificaciones();
-                    clearForm();
-                    lblNombre.Visible = false;
-                    lblMatricula.Visible = false;
-                    lblCurso.Visible = false;
+            {
+                dominio.actualizarCalificaciones(int.Parse(idCalificacion), int.Parse(txtCalificacion.Text));
+                lblEstado.Text = "Se aplicó correctamente....";
+                lblEstado.ForeColor = Color.White;
+                lblEstado.Visible = true;
+                mostrarCalificaciones();
+                clearForm();
             }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("No se pudieron editar los datos por: " + ex);
-                }
+            catch (Exception ex)
+            {
+                lblEstado.Text = "Revise la nota colocada....";
+                lblEstado.ForeColor = Color.Red;
+                lblEstado.Visible = true;
+            }
         }
     }
-    
+
 }
